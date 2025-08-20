@@ -13,7 +13,7 @@ type
     procedure Button1Click(Sender: TObject);
   private
     description : string;
-    procedure PrintValue(value : string);
+    function funcShowText : string;
   public
   end;
 
@@ -26,13 +26,18 @@ implementation
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
-  description := EditDescription.Text;
-  PrintValue(description);
+  description := funcShowText;
+  if description = '' then
+  begin
+    ShowMessage('Please write something first');
+    Exit;
+  end;
+  ShowMessage('Result: ' + description);
 end;
 
-procedure TForm1.PrintValue(value : string);
+function TForm1.funcShowText: string;
 begin
-  ShowMessage(value);
+  Result := EditDescription.Text;
 end;
 
 end.
