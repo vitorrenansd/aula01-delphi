@@ -9,13 +9,10 @@ uses
 type
   TForm1 = class(TForm)
     Button1: TButton;
-    Edit1: TEdit;
+    EditDescription: TEdit;
     procedure Button1Click(Sender: TObject);
   private
-    id : integer;
     description : string;
-    price : currency;
-    active : boolean;
     procedure PrintValue(value : string);
   public
   end;
@@ -29,17 +26,13 @@ implementation
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
-  id := 1;
-  description := 'Generic mouse';
-  price := 3.99;
-  active := true;
+  description := EditDescription.Text;
   PrintValue(description);
 end;
 
 procedure TForm1.PrintValue(value : string);
 begin
-  ShowMessage('Hello World! ' + value);
+  ShowMessage(value);
 end;
-
 
 end.

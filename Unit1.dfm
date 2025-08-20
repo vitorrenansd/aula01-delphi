@@ -20,12 +20,11 @@ object Form1: TForm1
     TabOrder = 0
     OnClick = Button1Click
   end
-  object Edit1: TEdit
+  object EditDescription: TEdit
     Left = 88
     Top = 48
     Width = 233
     Height = 23
     TabOrder = 1
-    Text = 'Edit1'
   end
 end
