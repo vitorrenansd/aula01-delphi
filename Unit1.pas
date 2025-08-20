@@ -16,6 +16,7 @@ type
     description : string;
     price : currency;
     active : boolean;
+    procedure PrintValue(value : string);
   public
   end;
 
@@ -29,9 +30,16 @@ implementation
 procedure TForm1.Button1Click(Sender: TObject);
 begin
   id := 1;
-  description := 'Mouse generico';
-  price := 35.99;
+  description := 'Generic mouse';
+  price := 3.99;
   active := true;
+  PrintValue(description);
 end;
+
+procedure TForm1.PrintValue(value : string);
+begin
+  ShowMessage('Hello World! ' + value);
+end;
+
 
 end.
